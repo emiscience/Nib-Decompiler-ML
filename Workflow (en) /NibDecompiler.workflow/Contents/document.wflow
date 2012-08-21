@@ -40,9 +40,9 @@
 				<key>AMRequiredResources</key>
 				<array/>
 				<key>ActionBundlePath</key>
-				<string>/Volumes/DataHD/akahan/Library/Automator/NibDecompiler.action</string>
+				<string>~/Library/Automator/NibDecompiler.action</string>
 				<key>ActionName</key>
-				<string>Декомпилятор Nib</string>
+				<string>Nib Decompiler</string>
 				<key>ActionParameters</key>
 				<dict/>
 				<key>Application</key>

@@ -27,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BED7405915E3646D007BCD6C /* NibDecompiler.workflow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NibDecompiler.workflow; path = "Workflow (ru)/NibDecompiler.workflow"; sourceTree = "<group>"; };
+		BED7405B15E36480007BCD6C /* NibDecompiler.workflow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NibDecompiler.workflow; path = "Workflow (en) /NibDecompiler.workflow"; sourceTree = "<group>"; };
 		D899DFE51284865D00F55CA4 /* NibDecompiler.action */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NibDecompiler.action; sourceTree = BUILT_PRODUCTS_DIR; };
 		D899DFE71284865D00F55CA4 /* Automator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Automator.framework; path = System/Library/Frameworks/Automator.framework; sourceTree = SDKROOT; };
 		D899DFE91284865D00F55CA4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -54,9 +56,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BED7405715E362E3007BCD6C /* Workflow (en) */ = {
+			isa = PBXGroup;
+			children = (
+				BED7405B15E36480007BCD6C /* NibDecompiler.workflow */,
+			);
+			name = "Workflow (en)";
+			sourceTree = "<group>";
+		};
+		BED7405815E3631E007BCD6C /* Workflow (ru) */ = {
+			isa = PBXGroup;
+			children = (
+				BED7405915E3646D007BCD6C /* NibDecompiler.workflow */,
+			);
+			name = "Workflow (ru)";
+			sourceTree = "<group>";
+		};
 		D899DFD31284865D00F55CA4 = {
 			isa = PBXGroup;
 			children = (
+				BED7405815E3631E007BCD6C /* Workflow (ru) */,
+				BED7405715E362E3007BCD6C /* Workflow (en) */,
 				D899DFDA1284865D00F55CA4 /* Classes */,
 				D899DFDB1284865D00F55CA4 /* Other Sources */,
 				D899DFDC1284865D00F55CA4 /* Resources */,
@@ -140,6 +160,7 @@
 		D899DFD51284865D00F55CA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Yukka-S";
 			};
 			buildConfigurationList = D899DFD81284865D00F55CA4 /* Build configuration list for PBXProject "NibDecompiler" */;
@@ -196,7 +217,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/bin/amlint \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}\"";
+			shellScript = "$(echo $(xcode-select --print-path)\"/usr/bin/amlint\") \"${HOME}/Library/Automator/${FULL_PRODUCT_NAME}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -235,10 +256,9 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -251,9 +271,8 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PREBINDING = NO;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = "";
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -261,6 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(HOME)/Library/Automator";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -270,8 +290,10 @@
 				GCC_PREFIX_HEADER = NibDecompiler_Prefix.pch;
 				INFOPLIST_FILE = "NibDecompiler-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Automator";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_OSAFLAGS = "-x -t 0 -c 0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = action;
 			};
 			name = Debug;
@@ -280,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(HOME)/Library/Automator";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -289,8 +312,10 @@
 				GCC_PREFIX_HEADER = NibDecompiler_Prefix.pch;
 				INFOPLIST_FILE = "NibDecompiler-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Automator";
+				MACOSX_DEPLOYMENT_TARGET = "";
 				OTHER_OSAFLAGS = "-x -t 0 -c 0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = "";
 				WRAPPER_EXTENSION = action;
 			};
 			name = Release;
